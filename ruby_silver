@@ -116,3 +116,28 @@ puts "第3引数: #{ARGV[2]}"
 ```
 
 という形で表示する事ができる
+
+### DATA(**END**以降をアクセスrするFileオブジェクト)
+
+ Rubyプログラム内に埋め込まれたデータを格納するためのファイルハンドル
+
+Ruby内にデータを含め、それをプログラム内でアクセスするために使用される
+
+(例)DATAファイルハンドルは、以下の方法で使われる
+
+```ruby
+puts DATA.read
+__END__
+This is some embedded data in the Ruby script.
+It can be accessed using the DATA file handle.
+```
+
+1. Rubyスクリプト内にデータを含める: Rubyスクリプトのソースコードの末尾に、_ _ END_ _というタグを置き、その後にデータを記述する。これにより、その部分のテキストがデータとして扱われる。
+2. データへのアクセス:DATAファイルハンドルを使用して、埋め込まれたデータにアクセスできる
+
+```ruby
+data = DATA.read
+puts data
+```
+
+### コマンドラインオプション
