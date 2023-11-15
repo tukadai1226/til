@@ -252,3 +252,9 @@ export RUBYOPT="-w"
 ```
 
 上記のコマンドを実行すると、Rubyプログラムを実行する際に警告が有効になる。
+
+```ruby
+export RUBYOPT="-I/path/to/your/directory"
+```
+
+上記のコマンドを実行すると、指定したディレクトリがRubyのロードパスに追加される。
