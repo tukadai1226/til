@@ -258,3 +258,9 @@ export RUBYOPT="-I/path/to/your/directory"
 ```
 
 上記のコマンドを実行すると、指定したディレクトリがRubyのロードパスに追加される。
+
+```ruby
+export RUBYOPT="-w -I/path/to/your/directory"
+```
+
+数のオプションを指定する場合は、スペースで区切って指定する。
