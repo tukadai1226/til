@@ -266,3 +266,18 @@ export RUBYOPT="-w -I/path/to/your/directory"
 数のオプションを指定する場合は、スペースで区切って指定する。
 
 ### RUBYLIB
+デフォルトでライブラリを検索するパスを指定
+
+Rubyがライブラリファイルを探すためのロードパスを指定する環境変数
+
+```ruby
+export RUBYLIB="/path/to/your/library"
+```
+
+上記のコマンドを実行すると、Rubyは指定したディレクトリをライブラリの検索パスに追加する。これにより、そのディレクトリ内にあるカスタムのライブラリがrequireメソッドを使用して参照できるようになる。
+
+```ruby
+export RUBYLIB="/path/to/first/library:/path/to/second/library"
+```
+
+複数のディレクトリをRUBYLIBに追加する場合は、それらのディレクトリをコロン (:) で区切って指定する。
