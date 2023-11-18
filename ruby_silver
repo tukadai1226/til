@@ -311,3 +311,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 組み込み変数＄LOAD_PATHは$:で参照する事ができ、ARGVは＄*で参照できる
 
 特殊変数はPerlで使われているものに由来している。
+
+### ＄_
+
+最後にgetsかreadlineで読み込んだ文字列
