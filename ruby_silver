@@ -315,3 +315,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 ### ＄_
 
 最後にgetsかreadlineで読み込んだ文字列
+
+### $&
+
+最後にマッチした文字列
