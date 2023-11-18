@@ -327,3 +327,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 ### $`
 
 マッチした部分より前の文字列
+
+### $’
+
+マッチした部分より後の文字列
