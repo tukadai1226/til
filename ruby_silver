@@ -319,3 +319,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 ### $&
 
 最後にマッチした文字列
+
+### $~
+
+最後に成功したマッチに対する結果。$~[n]で参照できる
