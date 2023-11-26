@@ -225,3 +225,115 @@ ArrayList<Integer> scores = new ArrayList<Integer>();
 - ArrayListの要素を作成
 
 そして代入している。
+
+## Rubyの配列との違い
+
+Javaの配列は、格納する要素の数を最初に決める必要があり、かつ後で要素数を変更することができない。
+
+要素を増やす場合は、サイズの大きな配列を新たに作成して元のデータをコピーするか、ArrayListというリストの一種を使用する。
+
+ArrayListは要素の数を変更できる配列のようなもので、ウェブアプリケーション開発でよく使用される。
+
+```java
+class Main {
+  public static void main(String[] args){
+     int[] scores;
+    scores = new int[3];
+
+    scores[0] = 1;
+    scores[1] = 5;
+    scores[2] = 10;
+
+    System.out.println(scores[0]);
+    System.out.println(scores[1]);
+    System.out.println(scores[2]);
+  }
+}
+```
+
+１、配列の宣言を行う
+
+int型のscoresという配列を宣言する。
+
+２、配列の要素を作成し、配列の中に代入する。
+
+scores  という配列にint型の要素を3つ作成し、int型の配列scoresに代入する。
+
+３、配列の要素に値を代入する。
+
+## 配列のさまざまな記述方法を理解する
+
+### 配列の宣言と同時に要素の作成を行う方法
+
+```java
+int[] scores = new int[3];
+```
+
+### 配列の宣言時に型推論を使用する方法
+
+```java
+var scores = new int[3];
+```
+
+### 配列の宣言から値の代入まですべて同時に行う方法
+
+```java
+int[] scores = {1,5,10};
+```
+
+## ArrayListとは
+
+「可変長配列」を使用するための仕組み。要素数を変更できる配列のこと。
+
+```java
+import java.util.ArrayList;
+
+class Main {
+  public static void main(String[] args){
+     ArrayList<Integer> scores = new ArrayList<Integer>();
+
+    scores.add(1);
+    scores.add(5);
+    scores.add(10);
+
+    System.out.println(scores.get(0));
+    System.out.println(scores.get(1));
+    System.out.println(scores.get(2));
+  }
+}
+```
+
+１、ライブラリをインポートする。
+
+```java
+import java.util.ArrayList;
+```
+
+２、ArrayListの宣言をする。
+
+```java
+ArrayList<データ型> scores = new ArrayList<データ型>();
+```
+
+３、ArrayListに値を代入する。
+
+```java
+scores.add(1);
+```
+
+４、ArrayListから要素を取り出す。
+
+```java
+scores.get(0)
+```
+
+```java
+ArrayList<Integer> scores = new ArrayList<Integer>();
+```
+
+ここで行なっている動作は２つ
+
+- 整数(integer)を格納するArrayListを「scores」という名称で宣言
+- ArrayListの要素を作成
+
+そして代入している。
