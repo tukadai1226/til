@@ -370,3 +370,26 @@ public:どのクラスからでもアクセス可能
 
 private:同一クラスからのみアクセス可能
 
+!https://kanda-it-school-kensyu.com/wp-content/uploads/jb_0702_1.png
+
+### パッケージの宣言について
+
+publicなサンプルクラスの宣言
+
+```java
+package jp.co.xxx;
+public class Sample {
+     // any code
+}
+```
+
+外部からアクセス不可なテストクラスの宣言
+
+```java
+package jp.co.xxx;
+class Test {
+   // any code
+} 
+```
+
+このようにパッケージを使用したアクセスを背御することで「公開するクラス」と「公開しないクラス」に分類できる。
