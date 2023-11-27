@@ -369,3 +369,4 @@ ArrayList<Integer> scores = new ArrayList<Integer>();
 public:どのクラスからでもアクセス可能
 
 private:同一クラスからのみアクセス可能
+
