@@ -422,3 +422,17 @@ public class Test {
 ### クラスのインポートについて
 
 javaにおいて、他のクラスやパッケージを使用するには、import文を使用する。
+
+### 完全修飾クラス名を使用してクラスを指定する方法
+
+まず以下のサンプルコードがあるとする
+
+```java
+package com.example.myapp;
+
+public class MyClass{
+      // any code
+}
+```
+
+このクラスを完全修飾クラス名で指定する場合、com.example.myapp.MyClassという形形式を使用する。
