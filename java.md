@@ -436,3 +436,4 @@ public class MyClass{
 ```
 
 このクラスを完全修飾クラス名で指定する場合、com.example.myapp.MyClassという形形式を使用する。
+
