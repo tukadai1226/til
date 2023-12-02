@@ -432,7 +432,7 @@ package com.example.myapp;
 
 public class MyClass{
       // any code
-}
+} 
 ```
 
 このクラスを完全修飾クラス名で指定する場合、com.example.myapp.MyClassという形形式を使用する。
