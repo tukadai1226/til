@@ -443,3 +443,13 @@ public class AnotherClass{
 ```
 
 完全修飾クラス名：クラスを一意に特定するためのフルネームである。
+
+**パッケージ名とクラス名を組み合わせて表現する。**
+
+例)
+
+```java
+com.example.MyClass
+```
+
+この場合、com.exampleがパッケージ名で、Myclassがクラス名。この完全修飾クラス名は、Myclassがcom.exampleパッケージに属している事を示している。
