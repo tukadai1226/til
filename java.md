@@ -436,4 +436,10 @@ public class MyClass{
 ```
 
 このクラスを完全修飾クラス名で指定する場合、com.example.myapp.MyClassという形形式を使用する。
+```java
+public class AnotherClass{
+   public static void main(Strung[] args) {
+     com.example.myapp.Myclass my
+```
 
+完全修飾クラス名：クラスを一意に特定するためのフルネームである。
