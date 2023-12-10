@@ -1,3 +1,5 @@
+# 初めてのSQL
+
 ### データベースマネジメントシステム(DBMS)
 
 データベースを管理するコンピュータシステムのこと
@@ -288,6 +290,178 @@ select * from products limit 10,10;
 **本番環境で直接データベースを直接操作する場合はlimitを使わず負荷をかけてしまうクエリを送るとデータベースが止まってしまいサービスが止まる恐れがある**。
 
 取得は1000件ぐらいで様子を見るのが無難。１テーブル10万件を超えるあたりからパフォーマンスが低下する。
+
+### sum集約関数
+
+合計値を求める
+
+```sql
+select sum(amount) from orders where order_time >= "2017-01-01 00:00:00" and order_time < "2017-02-01 00:00:00";
+```
+
+2017年1月の売り上げの合計を取得
+
+### avg集約関数
+
+平均値を求める
+
+```sql
+select avg(price) from products;
+```
+
+商品価格の平均値を取得
+
+### min集約関数
+
+```sql
+select min(price) from products;
+```
+
+商品価格の最小値を取得
+
+### max集約関数
+
+```sql
+select max(price) from products;
+```
+
+商品価格の最大値を取得
+
+### count 集約関数
+
+```sql
+select count(*) from users;
+```
+
+ユーザー数はユーザーテーブルの全行数をカウントすればわかる。
+
+### ユニークユーザーを求める
+
+ユニークユーザーとは決まった集計期間内にアクセスしたユーザーの数を表す数値。
+
+あるユーザーが期間内に10回アクセスしたとしても1と数える。
+
+distinctは重複した値を一回とカウントする。
+
+```sql
+select count(distinct user_id) from acces_logs where request_mounth = '2017-01-01'
+```
+
+2017年1月1日にアクセスしたユーザー数を取得
+
+### group by句
+
+countなどを使ってデータを集計するときに、グループ単位で集計が行われる。
+
+group byで指定する列名によってグループ化される。
+
+```sql
+select prefecture_id, count(*) from users group by prefecture_id;
+```
+
+都道府県idごとのユーザー数を取得
+
+### having句
+
+where句と同様に、条件に合致する行だけに絞り込める。
+
+having句は、テーブルのデータを集約した結果に対して、条件式を適用する場合に利用する。
+
+記述順序
+
+select from where group by having
+
+※ポイントとしては、havingは、group byの後に書く
+
+```sql
+select 
+  request_month,
+  count(distinct user_id) 
+from 
+  access_logs 
+where 
+  request_month >= '2017-01-01' 
+  and request_month < '2018-01-01' 
+group by 
+  request_month
+having
+  count(distinct user_id) >= 630;
+```
+
+ユニークユーザー数が630人以上の月だけに絞り込む事ができる。
+
+### order by句
+
+並び替えを行う
+
+asc:昇順(デフォルト)
+
+desc:降順
+
+```sql
+select * from products order by price desc;
+```
+
+価格が高い順に並び変わる
+
+```sql
+select * from products order by price asc;
+```
+
+価格が低い順に並び変わる(ascの記述を省略する事ができる)
+
+※order byで並び順を指定しないとどんな並び順になるか分からない。規則性はあるがバージョンアップで同じ並び順になることは保証されていない。
+
+複数の条件で並びかえる
+
+```sql
+select * from products order by price desc, id asc;
+```
+
+商品を価格が高い順で並びかえ、価格が同じときには登録順で並び替えて表示
+
+### 関数と演算子
+
+```sql
+select 10 + 3;
+select 10 - 3;
+select 10 * 3;
+select 10 / 3;
+select 10 % 3;
+```
+
+selectのみで計算結果を出力できる。
+
+### nullを含む演算
+
+nullを含んだ計算結果はnullになる。
+
+```sql
+select 10 + null
+
+null
+```
+
+### 記述順序
+
+1. select・・・取得行(カラム)の指定
+2. from・・・対象テーブルの指定
+3. where・・・絞り込み条件の指定
+4. group by・・・グループ化の条件を指定
+5. having・・・グループ化した後の絞り込み条件を指定
+6. order by・・・並び替え条件を指定
+7. limit・・・取得する行数の制限
+
+### 集約関数におけるnullの扱い
+
+- 数値がないことを示す特別な表現
+- 数値の０でもなく値がない
+
+**※集約関数では基本的にはnullが無視される**
+
+例) 10 null 20　の平均値avg()は15となる。
+
+実践：可能であれば値にnullが含まれなようにデータベース設計をした方がトラブルが減る。
 
 ### コメントアウト
 
