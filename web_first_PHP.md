@@ -27,3 +27,33 @@ Webシステムにはクライアントとサーバーが必要でインター�
 　　データベースサーバー・・・データを取得しリクエスト内容によって渡す。
 
 - サーバーにはサーバー用のOSがあり、用意したい役割に応じて必要なソフトウェアをインストールして動かす。
+
+### HTML(Hyper Text Markup Language)とは
+
+Webブラウザでページ(Hyper Text)を表示するための言語
+
+Hyper Text・・・ハイパーリンクを使い文書と文書を関連付ける事ができること。linkを使う。
+
+Language・・・表現方法
+
+### Webブラウザ
+
+HTMLの内容を解釈してわかりやすく表示する役割
+
+### CSS(Cascading Style Sheet)とは
+
+HTMLを装飾する。
+
+### JavaScriptでHTMLを操作するとは
+
+実際にはブラウザで読み込んだHTMLの内容を操作するということになる。
+
+WebブラウザはHTMLをサーバーから受け取ると、そのHTMLの構造を理解してツリー構造で理解をする。
+
+!https://www.freecodecamp.org/news/content/images/2021/09/Document.jpg
+
+このような整えたものをObuject Document Model(DOM)という。
+
+ブラウザはそのDOMの構造ができたら、ブラウザ上でDOMの構造通りに表示するという流れになっている。
+
+**JavaScriptはこのDOMを操作して表示する内容を変化させる事ができる。**
