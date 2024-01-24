@@ -74,4 +74,4 @@ Android SDKに関する設定などを書くのするフォルダ。AVDもこの
 
 ## .gradle
 
-Android Studioが利用するビルドシステムであるGradleのライブラリ類が格納されたフォルダ。
+Android Studioが利用するビルドシステムであるGradleのライブラリ類が格納されたフォルダ。 
